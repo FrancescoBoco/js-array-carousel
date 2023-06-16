@@ -14,3 +14,61 @@
 }
 
 /* GENERAL */
+
+#container{
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightcoral;
+}
+
+
+
+#items{
+    position: relative;
+    width: 700px;
+    height: 300px;
+}
+
+#up{
+    position: absolute;
+    left:50%;
+    top:0;
+    transform: translate(-50%);
+    background-color: gray;
+    padding: 3px;
+    border-radius: 50%;
+    margin-top: 3px;
+}
+
+
+#down{
+    position: absolute;
+    left:50%;
+    bottom:0;
+    transform: translate(-50%);
+    background-color: gray;
+    padding: 3px;
+    border-radius: 50%;
+    margin-bottom: 3px;
+}
+
+
+
+
+.item{
+   height: 100%;
+   display: none;
+}
+.active{
+    display: block;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
