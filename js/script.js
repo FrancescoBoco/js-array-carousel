@@ -7,7 +7,7 @@ const album = [
     <img src="img/01.webp" alt=""> 
     </div>
     
-    v"img/01.webp"
+    "img/01.webp"
      `
     ,
     ` 
@@ -56,22 +56,25 @@ for (let i = 0; i < album.length; i++) {
 }
    */
 
+const album = ['img/01.webp','img/02.webp','img/03.webp','img/04.webp','img/05.webp']
+
+
 
 
 const upButton = document.getElementById('up')
 
 
-let activeImg = 1;
+let activeImg = 0;
 upButton.addEventListener('click', 
 
     function(){
         activeImg += 1;
 
-        if (activeImg == 6  ){
-            activeImg = 1
+        if (activeImg >= album.length  ){
+            activeImg = 0
         }
 
-        document.getElementById("img").src = `img/0${activeImg}.webp`; /*album[activeImg]*/
+        document.getElementById("img").src = album[activeImg];
 
 
 
@@ -83,24 +86,19 @@ upButton.addEventListener('click',
 
 
 
-
 const downButton = document.getElementById('down')
 
 downButton.addEventListener('click', 
 
+
     function(){
         activeImg -= 1;
 
-        // activeImg = (activeImg - 1) % 5 + 1 
-
-        if (activeImg == 0  ){
-            activeImg = 5
+        if (activeImg < 0   ){
+            activeImg = album.length -1
         }
 
-
-        document.getElementById("img").src = `img/0${activeImg}.webp`;
-
-        
+        document.getElementById("img").src = album[activeImg];
 
 
 
