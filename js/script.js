@@ -1,11 +1,11 @@
 
-
+ /*
 const album = [
+    
     ` 
-    <div class="item active" id="img_1">
+    <div class="item active" id="img_1 " >
     <img src="img/01.webp" alt=""> 
-    </div> 
-    `
+    </div>     `
     ,
     ` 
     <div class="item" id="img_2">
@@ -30,8 +30,8 @@ const album = [
     <img src="img/05.webp" alt=""> 
     </div> 
     `
-   
 ] 
+
 
 console.log ('album', album, typeof album)
 
@@ -39,29 +39,36 @@ let items = document.getElementById("items")
 
 for (let i = 0; i < album.length; i++) {
     console. log ('-', i, album[i]);
-    // document.getElementById('items').innerHTML = (album)
+    document.getElementById('items').innerHTML = (album)
     items.innerHTML += album[i];
     
-    // let list = document.querySelector("item").classList;
-    // list.add("active");
+    let list = document.querySelector("item").classList;
+    list.add("active");
 
-    // document.querySelector("item").classList.add("active");
-    // item.classList.add
+    document.querySelector("item").classList.add("active");
+    item.classList.add
 
-    // let list = album[i].classList;
-    // list.add("myStyle");
+    let list = album[i].classList;
+    list.add("myStyle");
 }
+   */
 
-const activeImg = 1;
+
 
 const upButton = document.getElementById('up')
 
+let activeImg = 1;
 upButton.addEventListener('click', 
-    
-    function(){
 
-        const activeImg = document.getElementById('img_'+activeImg)
-        activeImg = activeImg + 1;
+    function(){
+        activeImg += 1;
+        document.getElementById("img").src = `img/0${activeImg}.webp`;
+
+
+
+        // let pippo = document.getElementById('img_'+activeImg);
+        // pippo.removeClass("active");
+        
 })
 
 
