@@ -5,7 +5,10 @@ const album = [
     ` 
     <div class="item active" id="img_1 " >
     <img src="img/01.webp" alt=""> 
-    </div>     `
+    </div>
+    
+    v"img/01.webp"
+     `
     ,
     ` 
     <div class="item" id="img_2">
@@ -57,12 +60,48 @@ for (let i = 0; i < album.length; i++) {
 
 const upButton = document.getElementById('up')
 
+
 let activeImg = 1;
 upButton.addEventListener('click', 
 
     function(){
         activeImg += 1;
+
+        if (activeImg == 6  ){
+            activeImg = 1
+        }
+
+        document.getElementById("img").src = `img/0${activeImg}.webp`; /*album[activeImg]*/
+
+
+
+
+        // let pippo = document.getElementById('img_'+activeImg);
+        // pippo.removeClass("active");
+        
+})
+
+
+
+
+const downButton = document.getElementById('down')
+
+downButton.addEventListener('click', 
+
+    function(){
+        activeImg -= 1;
+
+        // activeImg = (activeImg - 1) % 5 + 1 
+
+        if (activeImg == 0  ){
+            activeImg = 5
+        }
+
+
         document.getElementById("img").src = `img/0${activeImg}.webp`;
+
+        
+
 
 
 
